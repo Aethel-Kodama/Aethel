@@ -1,17 +1,19 @@
 @charset "UTF-8";
-
+html,body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+}
 header {
-    position: center;
-    position: sticky;
-    top: 0;
-    width: 100vw;
+    top: 0%;
+    width: 100%;
     height: 50px;
-    background-color: #fa0606;
+    background-color: #ffffff;
     z-index: 1;
 }
 div {
-    position: sticky;
-    width: 100vw;
+    width: 100%;
     top: 50px;
     z-index: 1;
     background-color: #ffffff;
@@ -21,39 +23,62 @@ div .item {
     padding: 5px 10px 5px 10px;
     margin: 5px;
     flex: 1;
+    position:relative;
+}
+div .item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #969696;
+    z-index: -1;
+    transition: width 0.3s ease-in-out;
+    transform-origin: left;
+}
+div .item:hover::before {
+    width: 100%;
 }
 div .container {
     display:flex;
     justify-content: space-between;
+    width: 100%;
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 p {
-    margin: 0px 50px;
+    margin: 0px 30px;
 }
 ul {
     list-style-type: none;
     padding: 0px;
 }
-li:hover {
-    color: #0408fa;
 
-}
 .base-image{
     height: 100vh;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 footer {
     padding:10px 0px 10px 0px;
     background-color: #000000;
     color: white;
-    margin-bottom: 0px;
-    position:static;
-
+    position: relative;
+    bottom:0px;
     width: 100%;
+    margin:0px 0px 0px 0px;
 }
-
+.topmenu {
+    position: sticky;
+    z-index: 1;
+    padding: 1.5px 0px 1.5px 0px;
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -64,16 +89,24 @@ footer {
 }
 
 .fade-in {
-    animation: fadeIn 0s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
     width: 100%;
     overflow-x: hidden;
 }
 
 @keyframes backgroundFadeIn {
     from {
-        background-position: RelativeX(0%);
+        background-position: relativeX(0%);
     }
     to {
-        background-position: RelativeX(100%);
+        background-position: relativeX(100%);
     }
+}
+
+
+
+a {
+    text-decoration: none;
+    color: black;
+    padding-right:100%
 }
