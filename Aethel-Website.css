@@ -110,3 +110,8 @@ a {
     color: black;
     
 }
+@media screen and (max-width: 600px) {
+    div .container {
+        width: 0px
+    }
+}
